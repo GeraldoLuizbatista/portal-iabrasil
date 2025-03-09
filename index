@@ -7,6 +7,8 @@
     <meta name="description" content="O maior portal sobre inteligência artificial em português. Notícias, produtos e empresas do mundo da IA.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- No cabeçalho, adicione dentro da tag <head> -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/plasticine/100/artificial-intelligence.png">
     <!-- Fontes do Google -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -14,9 +16,10 @@
     <!-- Cabeçalho -->
     <header>
         <div class="container">
-            <div class="logo">
-                <h1>Portal<span>IA</span></h1>
-            </div>
+            <!-- Substitua o logotipo atual por este -->
+        <div class="logo">
+    <h1>Portal<span style="color: var(--primary-color); font-weight: 700;">IA</span></h1>
+</div>
             <nav>
                 <button class="mobile-menu-btn">
                     <span class="bar"></span>
@@ -34,80 +37,68 @@
         </div>
     </header>
 
-    <!-- Banner Principal -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Descubra o Universo da Inteligência Artificial</h2>
-                <p>O maior portal em português com notícias, produtos e empresas do mundo da IA.</p>
-                <div class="hero-buttons">
-                    <a href="#noticias" class="btn primary">Explorar Notícias</a>
-                    <a href="#produtos" class="btn secondary">Descobrir Produtos</a>
-                </div>
+   <!-- Banner Principal - MODIFICADO -->
+<section class="hero" style="background-image: linear-gradient(rgba(67, 97, 238, 0.8), rgba(114, 9, 183, 0.8)), url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb'); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="hero-content">
+            <h2>Descubra o Universo da Inteligência Artificial</h2>
+            <p>O maior portal em português com notícias, produtos e empresas do mundo da IA.</p>
+            <div class="hero-buttons">
+                <a href="#noticias" class="btn primary">Explorar Notícias</a>
+                <a href="#produtos" class="btn secondary">Descobrir Produtos</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Seção de Notícias em Destaque -->
-    <section id="noticias-destaque" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Notícias em Destaque</h2>
-                <p>As últimas novidades do mundo da Inteligência Artificial</p>
-            </div>
-            <div class="news-grid">
-                <!-- Notícia 1 -->
-                <div class="news-card">
-                    <div class="card-img">
-                        <img src="https://via.placeholder.com/350x200" alt="Imagem da notícia">
-                        <span class="category">Avanços Tecnológicos</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Google apresenta novo modelo de IA com capacidades multilíngues avançadas</h3>
-                        <p>O novo modelo consegue traduzir e entender mais de 100 idiomas com precisão sem precedentes.</p>
-                        <div class="card-meta">
-                            <span><i class="far fa-calendar"></i> 08/03/2025</span>
-                            <a href="#" class="read-more">Leia mais <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Notícia 2 -->
-                <div class="news-card">
-                    <div class="card-img">
-                        <img src="https://via.placeholder.com/350x200" alt="Imagem da notícia">
-                        <span class="category">IA no Brasil</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Startup brasileira desenvolve IA para otimização do agronegócio</h3>
-                        <p>A solução promete aumentar a produtividade em até 30% usando análise inteligente de dados.</p>
-                        <div class="card-meta">
-                            <span><i class="far fa-calendar"></i> 05/03/2025</span>
-                            <a href="#" class="read-more">Leia mais <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Notícia 3 -->
-                <div class="news-card">
-                    <div class="card-img">
-                        <img src="https://via.placeholder.com/350x200" alt="Imagem da notícia">
-                        <span class="category">Regulamentações e Ética</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>União Europeia propõe novas diretrizes para regulação de IA</h3>
-                        <p>As novas regras visam garantir desenvolvimento ético e seguro de tecnologias de inteligência artificial.</p>
-                        <div class="card-meta">
-                            <span><i class="far fa-calendar"></i> 02/03/2025</span>
-                            <a href="#" class="read-more">Leia mais <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section-footer">
-                <a href="#noticias" class="btn secondary">Ver todas as notícias</a>
+  <!-- Seção de Notícias em Destaque - MODIFICADO -->
+          <div class="news-grid">
+    <!-- Notícia 1 -->
+         <div class="news-card">
+           <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b" alt="Robô com inteligência artificial humanizada">
+            <span class="category">Avanços Tecnológicos</span>
+        </div>
+        <div class="card-content">
+            <h3>Google apresenta novo modelo de IA com capacidades multilíngues avançadas</h3>
+            <p>O novo modelo consegue traduzir e entender mais de 100 idiomas com precisão sem precedentes.</p>
+            <div class="card-meta">
+                <span><i class="far fa-calendar"></i> 08/03/2025</span>
+                <a href="#" class="read-more">Leia mais <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
-    </section>
-
+    </div>
+    <!-- Notícia 2 -->
+    <div class="news-card">
+        <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b" alt="Programador brasileiro trabalhando em código de IA">
+            <span class="category">IA no Brasil</span>
+        </div>
+        <div class="card-content">
+            <h3>Startup brasileira desenvolve IA para otimização do agronegócio</h3>
+            <p>A solução promete aumentar a produtividade em até 30% usando análise inteligente de dados.</p>
+            <div class="card-meta">
+                <span><i class="far fa-calendar"></i> 05/03/2025</span>
+                <a href="#" class="read-more">Leia mais <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Notícia 3 -->
+    <div class="news-card">
+        <div class="card-img">
+            <img src="https://unsplash.com/pt-br/fotografias/mulher-nova-com-esmalte-preto-nas-unhas-segurando-pela-mao-mioeletrica-pertencente-a-pessoa-com-deficiencia-fisica-PBlla_qR7VU" alt="Mão robótica e mão humana se cumprimentando">
+            <span class="category">Regulamentações e Ética</span>
+        </div>
+        <div class="card-content">
+            <h3>União Europeia propõe novas diretrizes para regulação de IA</h3>
+            <p>As novas regras visam garantir desenvolvimento ético e seguro de tecnologias de inteligência artificial.</p>
+            <div class="card-meta">
+                <span><i class="far fa-calendar"></i> 02/03/2025</span>
+                <a href="#" class="read-more">Leia mais <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Seção de Categorias de Notícias -->
     <section id="noticias" class="section bg-light">
         <div class="container">
@@ -171,103 +162,103 @@
                 <button class="category-filter" data-category="saude">IA para Saúde</button>
             </div>
             <div class="products-grid">
-                <!-- Produto 1 -->
-                <div class="product-card" data-category="imagens">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Logo do produto">
-                    </div>
-                    <div class="product-content">
-                        <h3>MidJourney</h3>
-                        <p>Gerador de imagens baseado em prompts de texto com qualidade excepcional.</p>
-                        <div class="product-tags">
-                            <span class="tag">Imagens</span>
-                            <span class="tag">Arte</span>
-                            <span class="tag">Design</span>
-                        </div>
-                        <a href="#" class="btn small">Saiba mais</a>
-                    </div>
-                </div>
-                <!-- Produto 2 -->
-                <div class="product-card" data-category="negocios">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Logo do produto">
-                    </div>
-                    <div class="product-content">
-                        <h3>ZenAnalytics</h3>
-                        <p>Plataforma de análise de dados empresariais com IA para insights automatizados.</p>
-                        <div class="product-tags">
-                            <span class="tag">Negócios</span>
-                            <span class="tag">Análise</span>
-                            <span class="tag">Dados</span>
-                        </div>
-                        <a href="#" class="btn small">Saiba mais</a>
-                    </div>
-                </div>
-                <!-- Produto 3 -->
-                <div class="product-card" data-category="dev">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Logo do produto">
-                    </div>
-                    <div class="product-content">
-                        <h3>CodePilot</h3>
-                        <p>Assistente de programação que ajuda desenvolvedores a escrever código mais rápido.</p>
-                        <div class="product-tags">
-                            <span class="tag">Desenvolvimento</span>
-                            <span class="tag">Código</span>
-                            <span class="tag">Produtividade</span>
-                        </div>
-                        <a href="#" class="btn small">Saiba mais</a>
-                    </div>
-                </div>
-                <!-- Produto 4 -->
-                <div class="product-card" data-category="educacao">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Logo do produto">
-                    </div>
-                    <div class="product-content">
-                        <h3>EduLearn AI</h3>
-                        <p>Plataforma educacional adaptativa que personaliza o aprendizado para cada estudante.</p>
-                        <div class="product-tags">
-                            <span class="tag">Educação</span>
-                            <span class="tag">Aprendizado</span>
-                            <span class="tag">Personalização</span>
-                        </div>
-                        <a href="#" class="btn small">Saiba mais</a>
-                    </div>
-                </div>
-                <!-- Produto 5 -->
-                <div class="product-card" data-category="saude">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Logo do produto">
-                    </div>
-                    <div class="product-content">
-                        <h3>MediScan</h3>
-                        <p>Sistema de diagnóstico por imagem que auxilia médicos na detecção precoce de doenças.</p>
-                        <div class="product-tags">
-                            <span class="tag">Saúde</span>
-                            <span class="tag">Diagnóstico</span>
-                            <span class="tag">Medicina</span>
-                        </div>
-                        <a href="#" class="btn small">Saiba mais</a>
-                    </div>
-                </div>
-                <!-- Produto 6 -->
-                <div class="product-card" data-category="negocios">
-                    <div class="product-img">
-                        <img src="https://via.placeholder.com/300x200" alt="Logo do produto">
-                    </div>
-                    <div class="product-content">
-                        <h3>CustomerAI</h3>
-                        <p>Plataforma de atendimento ao cliente com chatbots inteligentes e análise de sentimento.</p>
-                        <div class="product-tags">
-                            <span class="tag">Negócios</span>
-                            <span class="tag">Atendimento</span>
-                            <span class="tag">Chatbot</span>
-                        </div>
-                        <a href="#" class="btn small">Saiba mais</a>
-                    </div>
-                </div>
+    <!-- Produto 1 -->
+    <div class="product-card" data-category="imagens">
+        <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1688989487185-3ba1e63e05ed" alt="Arte gerada por IA">
+        </div>
+        <div class="product-content">
+            <h3>MidJourney</h3>
+            <p>Gerador de imagens baseado em prompts de texto com qualidade excepcional.</p>
+            <div class="product-tags">
+                <span class="tag">Imagens</span>
+                <span class="tag">Arte</span>
+                <span class="tag">Design</span>
             </div>
+            <a href="#" class="btn small">Saiba mais</a>
+        </div>
+    </div>
+    <!-- Produto 2 -->
+    <div class="product-card" data-category="negocios">
+        <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" alt="Dashboard de análise de dados com IA">
+        </div>
+        <div class="product-content">
+            <h3>ZenAnalytics</h3>
+            <p>Plataforma de análise de dados empresariais com IA para insights automatizados.</p>
+            <div class="product-tags">
+                <span class="tag">Negócios</span>
+                <span class="tag">Análise</span>
+                <span class="tag">Dados</span>
+            </div>
+            <a href="#" class="btn small">Saiba mais</a>
+        </div>
+    </div>
+    <!-- Produto 3 -->
+    <div class="product-card" data-category="dev">
+        <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159" alt="Código sendo assistido por IA">
+        </div>
+        <div class="product-content">
+            <h3>CodePilot</h3>
+            <p>Assistente de programação que ajuda desenvolvedores a escrever código mais rápido.</p>
+            <div class="product-tags">
+                <span class="tag">Desenvolvimento</span>
+                <span class="tag">Código</span>
+                <span class="tag">Produtividade</span>
+            </div>
+            <a href="#" class="btn small">Saiba mais</a>
+        </div>
+    </div>
+    <!-- Produto 4 -->
+    <div class="product-card" data-category="educacao">
+        <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Criança usando aplicativo educacional com IA">
+        </div>
+        <div class="product-content">
+            <h3>EduLearn AI</h3>
+            <p>Plataforma educacional adaptativa que personaliza o aprendizado para cada estudante.</p>
+            <div class="product-tags">
+                <span class="tag">Educação</span>
+                <span class="tag">Aprendizado</span>
+                <span class="tag">Personalização</span>
+            </div>
+            <a href="#" class="btn small">Saiba mais</a>
+        </div>
+    </div>
+    <!-- Produto 5 -->
+    <div class="product-card" data-category="saude">
+        <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef" alt="Médico analisando imagem médica assistida por IA">
+        </div>
+        <div class="product-content">
+            <h3>MediScan</h3>
+            <p>Sistema de diagnóstico por imagem que auxilia médicos na detecção precoce de doenças.</p>
+            <div class="product-tags">
+                <span class="tag">Saúde</span>
+                <span class="tag">Diagnóstico</span>
+                <span class="tag">Medicina</span>
+            </div>
+            <a href="#" class="btn small">Saiba mais</a>
+        </div>
+    </div>
+    <!-- Produto 6 -->
+    <div class="product-card" data-category="negocios">
+        <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387" alt="Interface de chatbot atendendo cliente">
+        </div>
+        <div class="product-content">
+            <h3>CustomerAI</h3>
+            <p>Plataforma de atendimento ao cliente com chatbots inteligentes e análise de sentimento.</p>
+            <div class="product-tags">
+                <span class="tag">Negócios</span>
+                <span class="tag">Atendimento</span>
+                <span class="tag">Chatbot</span>
+            </div>
+            <a href="#" class="btn small">Saiba mais</a>
+        </div>
+    </div>
+</div>
             <div class="section-footer">
                 <a href="#" class="btn secondary">Ver todos os produtos</a>
             </div>
