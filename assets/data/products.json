@@ -1,1 +1,58 @@
-
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "MidJourney",
+      "description": "Gerador de imagens baseado em prompts de texto com qualidade excepcional.",
+      "category": "IA para Imagens",
+      "image": "../assets/images/products/midjourney.jpg",
+      "tags": ["Imagens", "Arte", "Design"],
+      "url": "#"
+    },
+    {
+      "id": 2,
+      "name": "ZenAnalytics",
+      "description": "Plataforma de análise de dados empresariais com IA para insights automatizados.",
+      "category": "IA para Negócios",
+      "image": "../assets/images/products/zenanalytics.jpg",
+      "tags": ["Negócios", "Análise", "Dados"],
+      "url": "#"
+    },
+    {
+      "id": 3,
+      "name": "CodePilot",
+      "description": "Assistente de programação que ajuda desenvolvedores a escrever código mais rápido.",
+      "category": "IA para Desenvolvedores",
+      "image": "../assets/images/products/codepilot.jpg",
+      "tags": ["Desenvolvimento", "Código", "Produtividade"],
+      "url": "#"
+    },
+    {
+      "id": 4,
+      "name": "EduLearn AI",
+      "description": "Plataforma educacional adaptativa que personaliza o aprendizado para cada estudante.",
+      "category": "IA para Educação",
+      "image": "../assets/images/products/edulearn.jpg",
+      "tags": ["Educação", "Aprendizado", "Personalização"],
+      "url": "#"
+    },
+    {
+      "id": 5,
+      "name": "MediScan",
+      "description": "Sistema de diagnóstico por imagem que auxilia médicos na detecção precoce de doenças.",
+      "category": "IA para Saúde",
+      "image": "../assets/images/products/mediscan.jpg",
+      "tags": ["Saúde", "Diagnóstico", "Medicina"],
+      "url": "#"
+    },
+    {
+      "id": 6,
+      "name": "CustomerAI",
+      "description": "Plataforma de atendimento ao cliente com chatbots inteligentes e análise de sentimento.",
+      "category": "IA para Negócios",
+      "image": "../assets/images/products/customerai.jpg",
+      "tags": ["Negócios", "Atendimento", "Chatbot"],
+      "url": "#"
+    }
+  ]
+}
