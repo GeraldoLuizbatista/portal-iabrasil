@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Função para configurar filtros de categoria
+// Certifique-se de que o seguinte código esteja no seu arquivo products.js:
 function setupProductFilters() {
   const filters = document.querySelectorAll('.category-filter');
   if (filters.length === 0) return;
@@ -132,22 +132,17 @@ function setupProductFilters() {
       
       // Filtrar os produtos
       const products = document.querySelectorAll('.product-card');
-      let resultsFound = false;
       
       products.forEach(product => {
         if (selectedCategory === 'all' || product.getAttribute('data-category') === selectedCategory) {
           product.style.display = 'block';
-          resultsFound = true;
         } else {
           product.style.display = 'none';
         }
       });
-      
-      // Mostrar mensagem se nenhum resultado for encontrado
-      const noResultsMsg = document.querySelector('.no-results-message');
-      if (noResultsMsg) {
-        noResultsMsg.style.display = resultsFound ? 'none' : 'block';
-      }
     });
   });
 }
+
+// Chamar a função quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', setupProductFilters);
