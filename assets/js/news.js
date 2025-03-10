@@ -32,38 +32,47 @@ const staticNewsItems = [
 let hasRenderedStaticNews = false;
 
 // Função para buscar notícias do Google Sheets
+// Função para buscar notícias do Google Sheets
 async function fetchNewsFromSheet() {
-  // Se já renderizamos as notícias estáticas e estamos em desenvolvimento, retornar
-  if (hasRenderedStaticNews && window.location.hostname === 'localhost') {
-    console.log("Desenvolvimento local detectado, ignorando chamada ao Google Sheets");
-    return staticNewsItems;
-  }
-
-  const sheetId = "SEU_ID_DA_PLANILHA"; // Substitua pelo ID da sua planilha
-  const sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
-  
   try {
-    const response = await fetch(sheetUrl);
+    // Use um proxy CORS para evitar problemas de acesso
+    const sheetId = "SEU_ID_DA_PLANILHA"; // Substitua pelo ID real
+    const sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+    
+    // Usando um serviço de proxy para evitar problemas de CORS
+    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(sheetUrl)}`;
+    
+    const response = await fetch(proxyUrl);
     const text = await response.text();
-    // O Google Sheets retorna um estranho formato JSON com prefixo, então precisamos limpá-lo
-    const data = JSON.parse(text.substring(47).slice(0, -2));
+    
+    // Log para debug
+    console.log("Resposta do Google Sheets:", text.substring(0, 100) + "...");
+    
+    // O Google Sheets retorna um formato específico que precisa ser limpo
+    const jsonText = text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1);
+    const data = JSON.parse(jsonText);
+    
+    if (!data || !data.table || !data.table.rows) {
+      console.error("Formato de dados inválido:", data);
+      throw new Error("Formato de dados inválido");
+    }
     
     // Converter dados da planilha para o formato necessário
     const newsItems = data.table.rows.map(row => {
       return {
-        title: row.c[0] ? row.c[0].v : "Sem título",
-        summary: row.c[1] ? row.c[1].v : "Sem resumo",
-        category: row.c[2] ? row.c[2].v : "Sem categoria",
-        image: row.c[3] ? row.c[3].v : "https://via.placeholder.com/350x200",
-        date: row.c[4] ? new Date(row.c[4].v).toISOString().split('T')[0] : "2025-01-01",
-        url: row.c[5] ? row.c[5].v : "#"
+        title: row.c[0]?.v || "Sem título",
+        summary: row.c[1]?.v || "Sem resumo",
+        category: row.c[2]?.v || "Sem categoria",
+        image: row.c[3]?.v || "https://via.placeholder.com/350x200",
+        date: row.c[4]?.v ? new Date(row.c[4].v).toISOString().split('T')[0] : "2025-01-01",
+        url: row.c[5]?.v || "#"
       };
     });
     
-    return newsItems.length > 0 ? newsItems : staticNewsItems;
+    console.log("Notícias carregadas da planilha:", newsItems.length);
+    return newsItems;
   } catch (error) {
     console.error("Erro ao carregar notícias:", error);
-    // Retornar dados estáticos em caso de erro
     return staticNewsItems;
   }
 }
@@ -106,8 +115,10 @@ function renderNews(newsItems, container = '.news-grid', limit = 3) {
     
     newsCard.innerHTML = `
       <div class="card-img">
-        <img src="${news.image}" alt="${news.title}">
-        <span class="category">${news.category}</span>
+    <img src="${news.image || 'https://via.placeholder.com/350x200?text=IA+Brasil'}" 
+         alt="${news.title}"
+         onerror="this.src='https://via.placeholder.com/350x200?text=IA+Brasil'">
+    <span class="category">${news.category}</span>
       </div>
       <div class="card-content">
         <h3>${news.title}</h3>
@@ -172,3 +183,22 @@ window.addEventListener('load', function() {
     }
   }
 });
+// Adicione esta função no news.js
+function sortNewsByDate(newsItems) {
+  return [...newsItems].sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+}
+
+// E modifique a função renderNews para usar:
+function renderNews(newsItems, container = '.news-grid', limit = 3) {
+  // ...código existente...
+  
+  // Ordenar por data mais recente primeiro
+  const sortedItems = sortNewsByDate(newsItems);
+  
+  // Limitar o número de notícias conforme solicitado
+  const itemsToShow = sortedItems.slice(0, limit);
+  
+  // ...resto do código...
+}
