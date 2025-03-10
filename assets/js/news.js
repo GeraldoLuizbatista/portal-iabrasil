@@ -2,8 +2,8 @@
 
 // Função para buscar notícias do Google Sheets
 async function fetchNewsFromSheet() {
-  const sheetId = "SEU_ID_DA_PLANILHA"; // Substitua pelo ID da sua planilha
-  const sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+  const sheetId = "2PACX-1vRR8xV7akM0H9514HrMa1DjryGsGirRWmtrMg4Jo9WysmgM0QUh6IdEg6RmZ7no_HO771AfkqFqI95b"; // Substitua pelo ID da sua planilha
+  const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vRR8xV7akM0H9514HrMa1DjryGsGirRWmtrMg4Jo9WysmgM0QUh6IdEg6RmZ7no_HO771AfkqFqI95b/pubhtml`;
   
   try {
     const response = await fetch(sheetUrl);
