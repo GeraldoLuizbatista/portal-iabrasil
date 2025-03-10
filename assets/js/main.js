@@ -14,7 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configurar eventos globais
     setupGlobalEvents();
 });
-
+// No arquivo main.js, adicione:
+document.addEventListener('DOMContentLoaded', function() {
+  // Botão "Ver todas as notícias"
+  const viewAllNewsBtn = document.querySelector('a[href="#noticias"]');
+  if (viewAllNewsBtn) {
+    viewAllNewsBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const noticiasSection = document.getElementById('noticias');
+      if (noticiasSection) {
+        noticiasSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+});
 async function loadNews() {
     try {
         const response = await fetch('./assets/data/news.json');
@@ -148,7 +161,26 @@ function setupProductFilters() {
         });
     });
 }
+// No arquivo main.js, adicione:
+// Filtro de categorias de notícias
+function setupNewsCategoryCards() {
+  const categoryCards = document.querySelectorAll('.category-card');
+  categoryCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      const category = this.querySelector('h3').textContent;
+      // Salvar a categoria selecionada
+      localStorage.setItem('selectedNewsCategory', category);
+      // Redirecionar para a seção de notícias
+      const noticiasSection = document.getElementById('noticias');
+      if (noticiasSection) {
+        noticiasSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+}
 
+document.addEventListener('DOMContentLoaded', setupNewsCategoryCards);
 function setupGlobalEvents() {
     // Menu mobile
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
