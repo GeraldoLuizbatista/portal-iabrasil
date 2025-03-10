@@ -68,7 +68,10 @@
                         <p>O novo modelo consegue traduzir e entender mais de 100 idiomas com precisão sem precedentes.</p>
                         <div class="card-meta">
                             <span><i class="far fa-calendar"></i> 08/03/2025</span>
-                            <a href="#" class="read-more">Leia mais <i class="fas fa-arrow-right"></i></a>
+                            // Modifique a parte do HTML que renderiza o botão "Leia mais":
+`<a href="${news.url || '#noticias'}" class="read-more" target="${news.url && news.url !== '#' ? '_blank' : '_self'}">
+  Leia mais <i class="fas fa-arrow-right"></i>
+</a>`
                         </div>
                     </div>
                 </div>
