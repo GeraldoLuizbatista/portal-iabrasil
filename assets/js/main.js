@@ -274,3 +274,36 @@ function showToast(message) {
         }, 300);
     }, 5000);
 }
+// Filtro de produtos
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.category-filter');
+  const productCards = document.querySelectorAll('.product-card');
+  
+  if (filterButtons.length > 0 && productCards.length > 0) {
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remover classe active de todos os botões
+        filterButtons.forEach(b => b.classList.remove('active'));
+        
+        // Adicionar classe active ao botão clicado
+        this.classList.add('active');
+        
+        // Obter categoria selecionada
+        const category = this.getAttribute('data-category');
+        
+        // Filtrar os produtos
+        productCards.forEach(card => {
+          if (category === 'all') {
+            card.style.display = 'block';
+          } else {
+            if (card.getAttribute('data-category') === category) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  }
+});
