@@ -391,10 +391,17 @@
             <div class="newsletter-content">
                 <h2>Fique por dentro das novidades</h2>
                 <p>Assine nossa newsletter e receba as últimas notícias sobre IA diretamente no seu email</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Seu melhor email" required>
-                    <button type="submit" class="btn primary">Assinar</button>
-                </form>
+                <form action="https://seusite.us1.list-manage.com/subscribe/post?u=XXXXXX&amp;id=XXXXXX" method="post" class="newsletter-form" target="_blank" id="newsletter-form">
+  <input type="email" name="EMAIL" placeholder="Seu melhor email" required>
+  <!-- Campos ocultos necessários para o MailChimp -->
+  <div style="position: absolute; left: -5000px;" aria-hidden="true">
+    <input type="text" name="b_XXXX_XXXX" tabindex="-1" value="">
+  </div>
+  <button type="submit" class="btn primary">Assinar</button>
+  <p class="newsletter-success" style="display: none; color: white; margin-top: 1rem;">
+    Obrigado por assinar nossa newsletter! Você receberá as últimas novidades sobre IA.
+  </p>
+</form>
             </div>
         </div>
     </section>
