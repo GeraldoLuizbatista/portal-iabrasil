@@ -39,13 +39,18 @@ function renderProducts(products, container = '.products-grid', limit = 6) {
   itemsToShow.forEach(product => {
     const productCard = document.createElement('div');
     productCard.className = 'product-card';
-    productCard.setAttribute('data-category', product.categorySlug);
+    productCard.setAttribute('data-category', product.categorySlug || convertToSlug(product.category));
+
     
-    const tagsHTML = product.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+    const tagsHTML = product.tags ? product.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : '';
+     // Usar uma imagem placeholder se a imagem do produto não estiver disponível
+    const imageUrl = product.image || 'https://via.placeholder.com/300x180?text=Produto+IA';
     
-    productCard.innerHTML = `
+     productCard.innerHTML = `
       <div class="product-img">
-        <img src="${product.image}" alt="${product.name}">
+        <img src="${imageUrl}" 
+             alt="${product.name}"
+             onerror="this.src='https://via.placeholder.com/300x180?text=Produto+IA'">
       </div>
       <div class="product-content">
         <h3>${product.name}</h3>
@@ -53,14 +58,23 @@ function renderProducts(products, container = '.products-grid', limit = 6) {
         <div class="product-tags">
           ${tagsHTML}
         </div>
-        <a href="${product.url}" class="btn small">Saiba mais</a>
+        <a href="${product.url || '#'}" class="btn small">Saiba mais</a>
       </div>
     `;
     
     productsGrid.appendChild(productCard);
   });
 }
-
+// Função auxiliar para converter texto em slug
+function convertToSlug(text) {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
 // Função para configurar a busca de produtos
 function setupProductSearch() {
   // Verificar se o contêiner de busca existe
