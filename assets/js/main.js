@@ -242,3 +242,29 @@ function showToast(message) {
         }, 300);
     }, 5000);
 }
+async function fetchNewsFromSheet() {
+  const sheetId = "SEU_ID_DA_PLANILHA";
+  const sheetUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+  
+  try {
+    const response = await fetch(sheetUrl);
+    const text = await response.text();
+    const data = JSON.parse(text.substring(47).slice(0, -2));
+    
+    // Converter dados da planilha para o formato necessário
+    const newsItems = data.table.rows.map(row => {
+      return {
+        title: row.c[0].v,
+        summary: row.c[1].v,
+        category: row.c[2].v,
+        image: row.c[3].v,
+        date: row.c[4].v,
+        url: row.c[5].v
+      };
+    });
+    
+    renderNews(newsItems);
+  } catch (error) {
+    console.error("Erro ao carregar notícias:", error);
+  }
+}
