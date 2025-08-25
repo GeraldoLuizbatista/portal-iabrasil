@@ -1,18 +1,18 @@
 /* Variáveis CSS */
 :root {
-    /* Cores principais */
-    --primary-color: #4361ee;
-    --primary-dark: #3a56d4;
-    --secondary-color: #7209b7;
-    --accent-color: #3a0ca3;
-    --success-color: #4cc9f0;
-    
-    /* Cores neutras */
-    --dark: #202124;
-    --gray-dark: #3c4043;
-    --gray: #5f6368;
-    --gray-light: #dadce0;
-    --light: #f8f9fa;
+/* Cores principais */ 
+--primary-color: #00055e;
+--primary-dark: #000446;
+--secondary-color: #ff6300;
+--accent-color: #ff8c42;
+--success-color: #00c896;
+
+/* Cores neutras */
+--dark: #0a0a0f;
+--gray-dark: #2a2a35;
+--gray: #5a5a65;
+--gray-light: #c2c2ca;
+--light: #fffff;
     
     /* Cores de texto */
     --text-primary: #202124;
@@ -621,7 +621,7 @@ header .container {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background-color: #e6e9ff;
+    background-color: #fff;
     color: var(--primary-color);
     transition: all var(--transition-fast);
 }
@@ -666,7 +666,7 @@ header .container {
 
 /* Newsletter */
 .newsletter {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--text-light);
     padding: var(--spacing-xl) 0;
     text-align: center;
@@ -767,7 +767,7 @@ footer {
 .footer-links a:hover,
 .footer-categories a:hover,
 .footer-products a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .footer-bottom {
