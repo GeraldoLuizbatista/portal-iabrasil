@@ -1,0 +1,31 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "Google apresenta novo modelo de IA com capacidades multilíngues avançadas",
+      "summary": "O novo modelo consegue traduzir e entender mais de 100 idiomas com precisão sem precedentes.",
+      "category": "Avanços Tecnológicos",
+      "image": "../assets/images/news/google-ai.jpg",
+      "date": "2025-03-08",
+      "url": "#"
+    },
+    {
+      "id": 2,
+      "title": "Startup brasileira desenvolve IA para otimização do agronegócio",
+      "summary": "A solução promete aumentar a produtividade em até 30% usando análise inteligente de dados.",
+      "category": "IA no Brasil",
+      "image": "../assets/images/news/agro-ai.jpg",
+      "date": "2025-03-05",
+      "url": "#"
+    },
+    {
+      "id": 3,
+      "title": "União Europeia propõe novas diretrizes para regulação de IA",
+      "summary": "As novas regras visam garantir desenvolvimento ético e seguro de tecnologias de inteligência artificial.",
+      "category": "Regulamentações e Ética",
+      "image": "../assets/images/news/eu-regulation.jpg",
+      "date": "2025-03-02",
+      "url": "#"
+    }
+  ]
+}
