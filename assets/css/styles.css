@@ -247,7 +247,7 @@ header .container {
 }
 
 .menu a {
-    color: var(--text-primary);
+    color: var(--text-secondary);
     font-weight: 500;
     padding-bottom: var(--spacing-xs);
     border-bottom: 2px solid transparent;
@@ -255,8 +255,8 @@ header .container {
 }
 
 .menu a:hover, .menu a.active {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 .mobile-menu-btn {
